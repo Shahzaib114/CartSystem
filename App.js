@@ -6,6 +6,7 @@ import store from './src/Store/store';
 import CartScreen from './src/screens/app/cartPage';
 import DetailScreen from './src/screens/app/ProdcutDetail';
 import Smartphones from './src/screens/app/SmartPhones';
+import Scanner from './src/screens/qrBarCoddeScanner/scanner';
 
 
 const App = () => {
@@ -13,10 +14,13 @@ const App = () => {
   return (
     <Provider store={store}>
       <NavigationContainer>
-        <Stack.Navigator>
+        <Stack.Navigator
+          initialRouteName='Scanner'
+        >
           <Stack.Screen name='DetailScreen' component={DetailScreen} options={{ headerShown: false }} />
           <Stack.Screen name='Smart Phones' component={Smartphones} options={{ headerShown: false }} />
           <Stack.Screen name='CartScreen' component={CartScreen} options={{ headerShown: false }} />
+          <Stack.Screen name='Scanner' component={Scanner} options={{ headerShown: false }} />
 
         </Stack.Navigator>
       </NavigationContainer>
